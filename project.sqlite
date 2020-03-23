@@ -1,0 +1,35 @@
+--Get feel for orders table
+SELECT * 
+ FROM orders
+ LIMIT 10;
+ 
+ --How recent is data
+ SELECT DISTINCT order_date 
+ FROM orders
+ ORDER BY order_date DESC
+ LIMIT 10;
+ 
+ --Special instructions, 20 samples
+ SELECT DISTINCT special_instructions
+ FROM orders
+ WHERE special_instructions IS NOT NULL
+ ORDER BY special_instructions ASC
+ LIMIT 20;
+ 
+ --Find where instructions has 'sauce'
+ SELECT special_instructions
+ FROM orders
+ WHERE special_instructions LIKE '%sauce%'
+ LIMIT 10;
+ 
+ --Find where instructions has 'door'
+ SELECT special_instructions
+ FROM orders
+ WHERE special_instructions LIKE '%door%';
+ 
+  --Find where instructions has 'box'
+ SELECT special_instructions AS 'Notes', id AS '#'
+ FROM orders
+ WHERE special_instructions LIKE '%box%';
+ 
+ 
